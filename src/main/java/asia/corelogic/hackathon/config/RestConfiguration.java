@@ -8,6 +8,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
@@ -26,12 +27,13 @@ public class RestConfiguration {
                 @Override
                 public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
                     System.err.println("********Token" + token);
+                    request.getHeaders().set("Content-Type", "application/json");
                     request.getHeaders().set("Authorization", "Bearer " + token);
                     return execution.execute(request, body);
                 }
             }
         ));
-       // restTemplate.setMessageConverters(Lists.newArrayList(JsonMess));
+        restTemplate.setMessageConverters(Lists.newArrayList(new MappingJackson2HttpMessageConverter()));
         return restTemplate;
     }
 
