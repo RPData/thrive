@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thr!ve</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="css/thrive.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Cost', '% of income'],
+          ['Housing',     11],
+          ['Food',      2],
+          ['Commuting',  2],
+          ['Other', 2],
+          ['Bills',    7]
+        ]);
+
+        var options = {
+          title: 'Transaction Breakdown',
+          is3D: true
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+  </script>
+</head>
+<body>
+  <nav class="thrive-navbar navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="img/logo.png" class="img-responsive">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Who am I?</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-default">
+            <tbody>
+              <tr>
+                <td>Name</td>
+                <td>John Doe</td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>M</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>howboutdah@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Age</td>
+                <td>35</td>
+              </tr>
+              <tr>
+                <td>Employer Name</td>
+                <td>Google, Inc.</td>
+              </tr>
+              <tr>
+                <td>Employed Since</td>
+                <td>12/12/05</td>
+              </tr>
+              <tr>
+                <td>Marital Status</td>
+                <td>Married</td>
+              </tr>
+              <tr>
+                <td>Dependents</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Salary</td>
+                <td>$150,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    <!-- <div class="col-md-6">
+        <div id="piechart" style="width: 400px; height: 500px;"></div>
+    </div> -->
+
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-home"></span> Where am I?</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-default">
+          <thead>
+            <th>
+              Residential Property
+            </th>
+            <th>
+            </th>
+          </thead>
+          <tbody id="accounts">
+            <tr>
+              <td>Address</td>
+              <td>13/45 James St Fortitude Valley QLD 4000</td>
+            </tr>
+            <tr>
+              <td>Occupancy Type</td>
+              <td>PPoR</td>
+            </tr>
+            <tr>
+              <td>Est. Value</td>
+              <td class="sum">$485,000</td>
+            </tr>
+            <tr>
+              <td>Mortgage</td>
+              <td class="sum debit">$400,000</td>
+            </tr>
+            <tr>
+              <td>Equity</td>
+              <td class="sum">$85,000</td>
+            </tr>
+          </tbody>
+          <thead>
+            <th>
+              Investment Property
+            </th>
+            <th>
+            </th>
+          </thead>
+          <tbody id="accounts">
+            <tr>
+              <td>Address</td>
+              <td>13 Osprey St Bellbird Park 4390</td>
+            </tr>
+            <tr>
+              <td>Occupancy Type</td>
+              <td>Rental</td>
+            </tr>
+            <tr>
+              <td>Est. Value</td>
+              <td class="sum">$385,000</td>
+            </tr>
+            <tr>
+              <td>Mortgage</td>
+              <td class="sum debit">$300,000</td>
+            </tr>
+            <tr>
+              <td>Equity</td>
+              <td class="sum">$85,000</td>
+            </tr>
+          </tbody>
+          <thead>
+            <th>
+              Superannuation
+            </th>
+            <th>
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>My super</td><td class="sum">$35,000</td>
+            </tr>
+            <tr>
+    <td>My partner's</td><td class="sum">$20,000</td>
+              <tr>
+          </tbody>
+          <thead>
+            <th>
+              Share Portfolio
+            </th>
+            <th>
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Overall value</td><td class="sum">$10,000</td>
+            </tr>
+          </tbody>
+          <thead>
+            <th>
+              Account Summary
+            </th>
+            <th>
+            </th>
+          </thead>
+          <tbody>
+            <tr><td>Transaction</td><td class="sum subsum">$1,600</td></tr>
+            <tr><td>Savings Acc</td><td class="sum subsum">$2,000</td></tr>
+            <tr><td>Credit Card</td><td class="sum subsum debit">$1,000</td></tr>
+          </tbody>
+          <thead>
+            <th>
+              Total credit balance
+            </th>
+            <th>
+            </th>
+          </thead>
+          <tbody>
+            <tr><td>Credit balance</td><td id="creditBalance"></td></tr>
+            <tr><td>Net Position</td><td id="netPosition"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-home"></span> What's next?</h3>
+      </div>
+      <div class="panel-body">
+          <div class="list-group">
+            <a id="investLink" href="" class="list-group-item">Should I add an investment property to my portfolio?</a>
+            <a href="" class="list-group-item">Should I upgrade my home?</a>
+            <a href="" class="list-group-item">Should I renovate my home?</a>
+            <a href="" class="list-group-item">Can I travel abroad for a year?</a>
+            <a href="" class="list-group-item">Can I start my own business?</a>
+          </div>
+
+          <div id="suburbPerformance">
+            <h2>Top Performing Suburbs That Match Your Profile</h2>
+            <table class="table table-default table-striped">
+              <thead>
+                <th>Suburb</th>
+                <th>Median Sale Price</th>
+                <th>Growth</th>
+                <th></th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-mansfield%2c+qld+4122%3b/list-1?activeSort=price-desc">Mansfield</a></td>
+                  <td>$2.95M</td>
+                  <td>59.9%</td>
+                  <td><span class="glyphicon glyphicon-file"></span></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-glen+waverley%2c+vic+3150%3b+/list-1?activeSort=price-desc&source=location-search">Glen Waverley</a></td>
+                  <td>$428K</td>
+                  <td>48.1%</td>
+                  <td><span class="glyphicon glyphicon-file"></span></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-liverpool%2c+nsw+2170%3b+/list-1?activeSort=price-desc&source=location-search">Liverpool</a></td>
+                  <td>$940K</td>
+                  <td>24.8%</td>
+                  <td><span class="glyphicon glyphicon-file"></span></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-middleton+grange%2c+nsw+2171%3b+/list-1?activeSort=price-desc&source=location-search">Middleton Grange</a></td>
+                  <td>$810K</td>
+                  <td>23.4%</td>
+                  <td><span class="glyphicon glyphicon-file"></span></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-grace%2c+qld+4122%3b/list-1?activeSort=price-desc">Crace</a></td>
+                  <td>$796K</td>
+                  <td>22.3%</td>
+                  <td><span class="glyphicon glyphicon-file"></span></td>
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container text-center">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-google-plus"></i></a>
+          <a href="#"><i class="fa fa-skype"></i></a>
+      </div>
+      <div>
+        <p>Powered by <img src="img/corelogic-logo-footer.png"></img></p>
+      </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $("#suburbPerformance").hide();
+
+        var total = 0;
+        var subTotal = 0;
+        $(".sum").each(function() {
+          var value = $(this).html();
+          value = value.replace("$", "").replace(",", "");
+          value = parseFloat(value);
+          if ($(this).hasClass("debit")) {
+            value *= -1;
+          }
+          total += value;
+        });
+        $(".subsum").each(function() {
+          var value = $(this).html();
+          value = value.replace("$", "").replace(",", "");
+          value = parseFloat(value);
+          if ($(this).hasClass("debit")) {
+            value *= -1;
+          }
+          subTotal += value;
+        });
+        $("#netPosition").text("$" + total);
+        $("#creditBalance").text("$" + subTotal);
+
+        $("#investLink").click(function(e) {
+            e.preventDefault();
+            $("#suburbPerformance").toggle();
+        });
+
+    });
+  </script>
+
+
+</body>
+</html>

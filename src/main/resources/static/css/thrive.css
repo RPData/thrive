@@ -1,0 +1,63 @@
+body {
+  background-color: #fcfeff;
+}
+.thrive-logo-text {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+.thrive-navbar {
+  background-color: #000000;
+  border-color: #000000;
+  height: 80px;
+  border-radius: 0;
+}
+.panel > .panel-heading {
+  background-color: #be0d00;
+  border-color: #be0d00;
+}
+.panel-title {
+  color: #FFF;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 120px;
+}
+.footer {
+  padding: 15px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 120px;
+  background-color: #1a1d1f;
+}
+
+.footer a {
+    color: #70726F;
+    font-size: 20px;
+    padding: 10px;
+    border-right: 1px solid #70726F;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.footer a:first-child {
+    border-left: 1px solid #70726F;
+}
+
+.footer a:hover {
+    color: white;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.footer p {
+  padding-left: 20px;
+  color: #FFF;
+}
