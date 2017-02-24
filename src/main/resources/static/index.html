@@ -54,9 +54,10 @@
   <div class="container">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Who am I?</h3>
+          <h3 class="panel-title"><a data-toggle="collapse" href="#collapse1"><span class="glyphicon glyphicon-chevron-down"></span></a> Who am I? </h3>
+
         </div>
-        <div class="panel-body">
+        <div id="collapse1" class="panel-body collapse in">
           <table class="table table-default">
             <tbody>
               <tr>
@@ -108,13 +109,13 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><span class="glyphicon glyphicon-home"></span> Where am I?</h3>
+        <h3 class="panel-title"><a data-toggle="collapse" href="#collapse2"><span class="glyphicon glyphicon-chevron-down"></span></a> Where am I?</h3>
       </div>
-      <div class="panel-body">
+      <div class="panel-body" id="collapse2" class="panel-body collapse in">
         <table class="table table-default">
           <thead>
             <th>
-              Residential Property
+              <span class="glyphicon glyphicon-home"></span> Residential Property
             </th>
             <th>
             </th>
@@ -143,7 +144,7 @@
           </tbody>
           <thead>
             <th>
-              Investment Property
+              <span class="glyphicon glyphicon-home"></span> Investment Property
             </th>
             <th>
             </th>
@@ -172,7 +173,7 @@
           </tbody>
           <thead>
             <th>
-              Superannuation
+              <span class="glyphicon glyphicon-calendar"></span> Superannuation
             </th>
             <th>
             </th>
@@ -187,7 +188,7 @@
           </tbody>
           <thead>
             <th>
-              Share Portfolio
+              <span class="glyphicon glyphicon-blackboard"></span> Share Portfolio
             </th>
             <th>
             </th>
@@ -199,7 +200,7 @@
           </tbody>
           <thead>
             <th>
-              Account Summary
+              <span class="glyphicon glyphicon-yen"></span> Account Summary
             </th>
             <th>
             </th>
@@ -211,7 +212,7 @@
           </tbody>
           <thead>
             <th>
-              Total credit balance
+              <span class="glyphicon glyphicon-signal"></span> Total credit balance
             </th>
             <th>
             </th>
@@ -227,9 +228,9 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><span class="glyphicon glyphicon-home"></span> What's next?</h3>
+        <h3 class="panel-title"><a data-toggle="collapse" href="#collapse3"><span class="glyphicon glyphicon-chevron-down"></span></a> What's next?</h3>
       </div>
-      <div class="panel-body">
+      <div class="panel-body" id="collapse3" class="panel-body collapse in">
           <div class="list-group">
             <a id="investLink" href="" class="list-group-item">Should I add an investment property to my portfolio?</a>
             <a href="" class="list-group-item">Should I upgrade my home?</a>
