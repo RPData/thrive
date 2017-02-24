@@ -19,16 +19,34 @@ public class RestConfiguration {
     private String token;
 
 
-    @Bean
+    @Bean(name = "corelogicTemplate")
     public RestTemplate getTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.setInterceptors(Lists.newArrayList(
             new ClientHttpRequestInterceptor() {
                 @Override
                 public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
-                    System.err.println("********Token" + token);
                     request.getHeaders().set("Content-Type", "application/json");
                     request.getHeaders().set("Authorization", "Bearer " + token);
+                    return execution.execute(request, body);
+                }
+            }
+        ));
+        restTemplate.setMessageConverters(Lists.newArrayList(new MappingJackson2HttpMessageConverter()));
+        return restTemplate;
+    }
+    @Bean(name = "nabTemplate")
+    public RestTemplate getNabTemplate() {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setInterceptors(Lists.newArrayList(
+            new ClientHttpRequestInterceptor() {
+                @Override
+                public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
+                    request.getHeaders().set("Content-Type", "application/json");
+                    request.getHeaders().set("x-nab-key", "0c12ce1a-f5a5-4933-b5aa-c27e14c757d7");
+                    if (NabToken.TOKEN.get() != null) {
+                        request.getHeaders().set("Authorization", NabToken.TOKEN.get());
+                    }
                     return execution.execute(request, body);
                 }
             }

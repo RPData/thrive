@@ -1,6 +1,7 @@
 package asia.corelogic.hackathon.gateway;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -19,7 +20,7 @@ public class PropertySuggestionGateway {
     private final String propertySuggestionUri;
 
     @Autowired
-    public PropertySuggestionGateway(RestTemplate jsonRestTemplateWithOAuthToken,
+    public PropertySuggestionGateway(@Qualifier(value = "corelogicTemplate") RestTemplate jsonRestTemplateWithOAuthToken,
                                      @Value("${corelogic.suggestion.uri}") String propertySuggestionUri) {
         this.jsonRestTemplateWithOAuthToken = jsonRestTemplateWithOAuthToken;
         this.propertySuggestionUri = propertySuggestionUri;

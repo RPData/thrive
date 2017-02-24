@@ -2,6 +2,7 @@ package asia.corelogic.hackathon.gateway;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -34,7 +35,7 @@ public class AvmGateway {
 //    }
 
     @Autowired
-    public AvmGateway(RestTemplate restTemplate,
+    public AvmGateway(@Qualifier(value = "corelogicTemplate") RestTemplate restTemplate,
                       @Value("${corelogic.suggestion.uri}") String propertyUrl) {
         this.restTemplate = restTemplate;
         this.path = propertyUrl;
