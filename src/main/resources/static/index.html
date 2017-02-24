@@ -70,7 +70,7 @@
               </tr>
               <tr>
                 <td>Email</td>
-                <td>howboutdah@gmail.com</td>
+                <td>CashMeOusideHowBowDuh@gmail.com</td>
               </tr>
               <tr>
                 <td>Age</td>
@@ -95,6 +95,10 @@
               <tr>
                 <td>Salary</td>
                 <td>$150,000</td>
+              </tr>
+              <tr>
+                <td>My Parner's Salary</td>
+                <td>$65,000</td>
               </tr>
             </tbody>
           </table>
@@ -232,9 +236,9 @@
       </div>
       <div class="panel-body" id="collapse3" class="panel-body collapse in">
           <div class="list-group">
-            <a id="investLink" href="" class="list-group-item">Should I add an investment property to my portfolio?</a>
-            <a href="" class="list-group-item">Should I upgrade my home?</a>
-            <a href="" class="list-group-item">Should I renovate my home?</a>
+            <a id="investLink" href="" class="list-group-item">Could I add an investment property to my portfolio?</a>
+            <a href="" class="list-group-item">Could I upgrade my home?</a>
+            <a href="" class="list-group-item">Could I renovate my home?</a>
             <a href="" class="list-group-item">Can I travel abroad for a year?</a>
             <a href="" class="list-group-item">Can I start my own business?</a>
           </div>
@@ -282,6 +286,7 @@
               </tbody>
 
             </table>
+            <div id="map"></div>
           </div>
       </div>
     </div>
@@ -329,17 +334,37 @@
           }
           subTotal += value;
         });
-        $("#netPosition").text("$" + total);
-        $("#creditBalance").text("$" + subTotal);
+        var formatter = new Intl.NumberFormat('en-GB', {
+          style: 'currency',
+          currency: 'AUD',
+          minimumFractionDigits: 2,
+        });
+
+        $("#netPosition").text(formatter.format(total).replace("A", ""));
+        $("#creditBalance").text(formatter.format(subTotal).replace("A", ""));
 
         $("#investLink").click(function(e) {
             e.preventDefault();
             $("#suburbPerformance").toggle();
         });
-
     });
   </script>
-
+  <script>
+    function initMap() {
+      var mansfieldPoint = {lat: -33.768499, lng: 151.101704};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: mansfieldPoint
+      });
+      var marker = new google.maps.Marker({
+        position: mansfieldPoint,
+        map: map
+      });
+    }
+  </script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc6VmVOfwbnVjqDPRrwzGZUq6yW48-IOk&callback=initMap">
+  </script>
 
 </body>
 </html>

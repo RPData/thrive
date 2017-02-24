@@ -1,6 +1,12 @@
 body {
   background-color: #fcfeff;
 }
+
+#map {
+ height: 400px;
+ width: 100%;
+}
+
 .thrive-logo-text {
   font-family: 'Merriweather Sans', sans-serif;
 }
