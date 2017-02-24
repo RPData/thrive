@@ -187,8 +187,12 @@
               <td>My super</td><td class="sum">$35,000</td>
             </tr>
             <tr>
-    <td>My partner's</td><td class="sum">$20,000</td>
-              <tr>
+              <td>My partner's</td><td class="sum">$20,000</td>
+            <tr>
+            <tr>
+              <td><img src="img/mlc.png" height="40px"/></td>
+              <td></td>
+            </tr>
           </tbody>
           <thead>
             <th>
@@ -200,6 +204,10 @@
           <tbody>
             <tr>
               <td>Overall value</td><td class="sum">$10,000</td>
+            </tr>
+            <tr>
+              <td style="background-color: black;"><img src="img/nabtrade.png" height="20px"/></td>
+              <td></td>
             </tr>
           </tbody>
           <thead>
@@ -224,6 +232,17 @@
           <tbody>
             <tr><td>Credit balance</td><td id="creditBalance"></td></tr>
             <tr><td>Net Position</td><td id="netPosition"></td></tr>
+          </tbody>
+          <thead>
+            <th>
+              <span class="glyphicon glyphicon-signal"></span> Expenses
+            </th>
+            <th>
+            </th>
+          </thead>
+          <tbody>
+            <tr><td>Spend Category</td><td></td></tr>
+            <tr><td>Money Tracker</td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -254,7 +273,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-mansfield%2c+qld+4122%3b/list-1?activeSort=price-desc">Mansfield</a></td>
+                  <td><a id="mansfield" href="">Mansfield</a></td>
                   <td>$2.95M</td>
                   <td>59.9%</td>
                   <td><span class="glyphicon glyphicon-file"></span></td>
@@ -286,7 +305,10 @@
               </tbody>
 
             </table>
-            <div id="map"></div>
+            <!-- <div id="map"></div> -->
+            <div id="clMap" class="text-center">
+              <img src="img/MansfieldMAP.PNG" alt="mansfield"/>
+            </div>
           </div>
       </div>
     </div>
@@ -313,6 +335,12 @@
   <script type="text/javascript">
     $(document).ready(function() {
         $("#suburbPerformance").hide();
+        $("#clMap").hide();
+
+        $("#mansfield").click(function(e) {
+          e.preventDefault();
+          $("#clMap").toggle();
+        });
 
         var total = 0;
         var subTotal = 0;
