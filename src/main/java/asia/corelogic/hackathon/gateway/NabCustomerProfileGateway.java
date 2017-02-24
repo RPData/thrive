@@ -38,6 +38,9 @@ public class NabCustomerProfileGateway {
             .put("lastName", node.path("customerDetailsResponse").path("person").get("lastName").asText())
             .put("dateOfBirth", node.path("customerDetailsResponse").path("person").get("dateOfBirth").asText())
             .put("email", node.path("customerDetailsResponse").path("email").get("id").asText())
+            .put("addressLine", node.path("customerDetailsResponse").path("physicalAddress").get("line1").asText() + " " + node.path("customerDetailsResponse").path("physicalAddress").get("line2").asText() )
+            .put("city", node.path("customerDetailsResponse").path("physicalAddress").get("city").asText())
+            .put("state", node.path("customerDetailsResponse").path("physicalAddress").get("state").asText())
             .build();
     }
 
