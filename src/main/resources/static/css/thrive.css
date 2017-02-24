@@ -7,6 +7,11 @@ body {
  width: 100%;
 }
 
+.btn-danger {
+  background-color: #be0d00;
+  border-color: #be0d00;
+}
+
 .thrive-logo-text {
   font-family: 'Merriweather Sans', sans-serif;
 }
