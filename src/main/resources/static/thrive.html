@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thr!ve</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/thrive.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+</head>
+<body>
+<nav class="thrive-navbar navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" src="img/logo.png" class="img-responsive">
+            </a>
+            <a class="thrive-brand" href="#">
+                | THR!VE
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><a data-toggle="collapse" href="#collapse1"><span class="glyphicon glyphicon-chevron-down"></span></a> Who am I? </h3>
+
+        </div>
+        <div id="collapse1" class="panel-body collapse in">
+            <table class="table table-default">
+                <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Dr Leonard Xavier</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>M</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>leo@test.com</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>39</td>
+                </tr>
+                <tr>
+                    <td>Employer Name</td>
+                    <td>Google, Inc.</td>
+                </tr>
+                <tr>
+                    <td>Employed Since</td>
+                    <td>12/12/05</td>
+                </tr>
+                <tr>
+                    <td>Marital Status</td>
+                    <td>Married</td>
+                </tr>
+                <tr>
+                    <td>Dependents</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <td>My Partner's Salary</td>
+                    <td>$65,000</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- <div class="col-md-6">
+        <div id="piechart" style="width: 400px; height: 500px;"></div>
+    </div> -->
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><a data-toggle="collapse" href="#collapse2"><span class="glyphicon glyphicon-chevron-down"></span></a> Where am I?</h3>
+        </div>
+        <div class="panel-body" id="collapse2" class="panel-body collapse in">
+            <table class="table table-default">
+                <thead>
+                <th>
+                    <span class="glyphicon glyphicon-home"></span> Residential Property
+                </th>
+                <th>
+                </th>
+                </thead>
+                <tbody id="accounts">
+                <tr>
+                    <td>Address</td>
+                    <td>800 Bourke Street Docklands Victoria 3008</td>
+                </tr>
+                <tr>
+                    <td>Occupancy Type</td>
+                    <td>PPoR</td>
+                </tr>
+                <tr>
+                    <td>Est. Value</td>
+                    <td class="sum">$485,000</td>
+                </tr>
+                <tr>
+                    <td>Mortgage</td>
+                    <td class="sum debit">$400,000</td>
+                </tr>
+                <tr>
+                    <td>Equity</td>
+                    <td class="sum">$85,000</td>
+                </tr>
+                </tbody>
+                <thead>
+                <th>
+                    <span class="glyphicon glyphicon-home"></span> Investment Property
+                </th>
+                <th>
+                </th>
+                </thead>
+                <tbody id="accounts">
+                <tr>
+                    <td>Address</td>
+                    <td>13 Osprey St Bellbird Park 4390</td>
+                </tr>
+                <tr>
+                    <td>Occupancy Type</td>
+                    <td>Rental</td>
+                </tr>
+                <tr>
+                    <td>Est. Value</td>
+                    <td class="sum">$385,000</td>
+                </tr>
+                <tr>
+                    <td>Mortgage</td>
+                    <td class="sum debit">$300,000</td>
+                </tr>
+                <tr>
+                    <td>Equity</td>
+                    <td class="sum">$85,000</td>
+                </tr>
+                </tbody>
+                <thead>
+                <th>
+                    <span class="glyphicon glyphicon-calendar"></span> Superannuation
+                </th>
+                <th>
+                </th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>My super</td><td class="sum">$35,000</td>
+                </tr>
+                <tr>
+                    <td>My partner's</td><td class="sum">$20,000</td>
+                <tr>
+                <tr>
+                    <td><img src="img/mlc.png" height="40px"/></td>
+                    <td></td>
+                </tr>
+                </tbody>
+                <thead>
+                <th>
+                    <span class="glyphicon glyphicon-blackboard"></span> Shares/Managed Funds
+                </th>
+                <th>
+                </th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Overall value</td><td class="sum">$10,000</td>
+                </tr>
+                <tr>
+                    <td style="background-color: black;"><img src="img/nabtrade.png" height="20px"/></td>
+                    <td></td>
+                </tr>
+                </tbody>
+                <thead>
+                <th>
+                    <span class="glyphicon glyphicon-yen"></span> Account Summary
+                </th>
+                <th>
+                </th>
+                </thead>
+                <tbody>
+                <tr><td>Transaction</td><td class="sum subsum">$1,600</td></tr>
+                <tr><td>Savings Acc</td><td class="sum subsum">$2,000</td></tr>
+                <tr><td>Credit Card</td><td class="sum subsum debit">$1,000</td></tr>
+                </tbody>
+                <thead>
+                <th>
+                    <span class="glyphicon glyphicon-signal"></span> Total credit balance
+                </th>
+                <th>
+                </th>
+                </thead>
+                <tbody>
+                <tr><td>Credit balance</td><td id="creditBalance"></td></tr>
+                </tbody>
+                <thead>
+                <th>
+                    <span class="glyphicon glyphicon-signal"></span> Expenses
+                </th>
+                <th>
+                </th>
+                </thead>
+                <tbody>
+                <tr><td>Money Tracker</td><td></td></tr>
+                <tr><td><img class="img-responsive" src="img/MoneyTrackerChart2.PNG" /></td>
+                    <td><img class="img-responsive" src="img/Total Portfolio Chart.PNG"/></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel panel-default net-pos">
+        <div class="panel-body">
+            <table class="table table-default">
+                <tbody>
+                <tr class="net-pos-text"><td class="text-center">Net Position</td><td id="netPosition"></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><a data-toggle="collapse" href="#collapse3"><span class="glyphicon glyphicon-chevron-down"></span></a> What's next?</h3>
+        </div>
+        <div class="panel-body" id="collapse3" class="panel-body collapse in">
+            <div class="list-group">
+                <a id="investLink" href="" class="list-group-item">Could I add an investment property to my portfolio?</a>
+                <a href="" class="list-group-item">Could I upgrade my home?</a>
+                <a href="" class="list-group-item">Could I renovate my home?</a>
+                <a href="" class="list-group-item">Can I travel abroad for a year?</a>
+                <a href="" class="list-group-item">Can I start my own business?</a>
+            </div>
+
+            <div id="suburbPerformance">
+                <h2>Top Performing Suburbs That Match Your Profile</h2>
+                <table class="table table-default table-striped">
+                    <thead>
+                    <th>Suburb</th>
+                    <th>Median Sale Price</th>
+                    <th>Growth</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a id="mansfield" href="">Mansfield</a></td>
+                        <td>$2.95M</td>
+                        <td>59.9%</td>
+                        <td><a href="MansfieldSPR.pdf"><span class="glyphicon glyphicon-file"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-glen+waverley%2c+vic+3150%3b+/list-1?activeSort=price-desc&source=location-search">Glen Waverley</a></td>
+                        <td>$428K</td>
+                        <td>48.1%</td>
+                        <td><a><span class="glyphicon glyphicon-file"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-liverpool%2c+nsw+2170%3b+/list-1?activeSort=price-desc&source=location-search">Liverpool</a></td>
+                        <td>$940K</td>
+                        <td>24.8%</td>
+                        <td><a><span class="glyphicon glyphicon-file"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-middleton+grange%2c+nsw+2171%3b+/list-1?activeSort=price-desc&source=location-search">Middleton Grange</a></td>
+                        <td>$810K</td>
+                        <td>23.4%</td>
+                        <td><a><span class="glyphicon glyphicon-file"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.realestate.com.au/buy/between-0-450000-in-grace%2c+qld+4122%3b/list-1?activeSort=price-desc">Crace</a></td>
+                        <td>$796K</td>
+                        <td>22.3%</td>
+                        <td><a><span class="glyphicon glyphicon-file"></span></a></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+                <div id="clMap" class="text-center">
+                    <img src="img/MansfieldMAP.PNG" alt="mansfield"/>
+                </div>
+            </div>
+        </div>
+
+        <ul id="list" class="media-list"/>
+
+    </div>
+
+
+
+
+    <div class="pull-right" role="group" aria-label="..." style="padding: 0 0 20px 0;">
+        <button id="apply-btn" type="button" class="btn btn-danger">Apply For Conditional Approval</button>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Share With
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Banker</a></li>
+                <li><a href="#">Broker</a></li>
+                <li><a href="#">Financial Planner</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-google-plus"></i></a>
+        <a href="#"><i class="fa fa-skype"></i></a>
+    </div>
+    <div>
+        <p>Powered by <img src="img/corelogic-logo-footer.png"></img></p>
+    </div>
+</footer>
+
+<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Congratulations!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Your pre-approval is now granted. One of our agents will get in contact with you shortly.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#suburbPerformance").hide();
+        $("#clMap").hide();
+        $("#list").hide();
+
+
+        $("#mansfield").click(function(e) {
+            e.preventDefault();
+            $("#clMap").toggle();
+            $("#list").toggle();
+        });
+
+        var total = 0;
+        var subTotal = 0;
+        $(".sum").each(function() {
+            var value = $(this).html();
+            value = value.replace("$", "").replace(",", "");
+            value = parseFloat(value);
+            if ($(this).hasClass("debit")) {
+                value *= -1;
+            }
+            total += value;
+        });
+        $(".subsum").each(function() {
+            var value = $(this).html();
+            value = value.replace("$", "").replace(",", "");
+            value = parseFloat(value);
+            if ($(this).hasClass("debit")) {
+                value *= -1;
+            }
+            subTotal += value;
+        });
+        var formatter = new Intl.NumberFormat('en-GB', {
+            style: 'currency',
+            currency: 'AUD',
+            minimumFractionDigits: 2,
+        });
+
+        $("#netPosition").text(formatter.format(total).replace("A", ""));
+        $("#creditBalance").text(formatter.format(subTotal).replace("A", ""));
+
+        $("#investLink").click(function(e) {
+            e.preventDefault();
+            $("#suburbPerformance").toggle();
+        });
+        $.getJSON( "otm", function( data ) {
+            $.each(data.comparableSales, function(i, v){
+                $("#list").append('<li class=\"media\"><div class=\"media-left\"><a href=\"#\"><img class=\"media-object\" src=\"' + v.propertyPhotoUri + '\"  height=\"70px\" width=\"120px\" alt=\"...\">' +
+                    '</a></div><div class="media-body"><h4 class="media-heading">' + v.singleLineAddress + '</h4>' +
+                '<p>' + v.priceDescription + '</p>' +
+                '<p>Rental Yield: 5.05%</p>' +
+                '<p><span class="glyphicon glyphicon-file"></span></p>' +
+                 ' </div> </li>');
+            });
+        });
+        $("#apply-btn").click(function() {
+            $("#modal").modal("show");
+        });
+    });
+</script>
+
+</body>
+</html>
