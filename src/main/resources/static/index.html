@@ -312,7 +312,7 @@
           </div>
       </div>
 
-      <ul class="media-list">
+      <ul id="list" class="media-list">
         <li class="media">
           <div class="media-left">
             <a href="#">
@@ -388,10 +388,13 @@
     $(document).ready(function() {
         $("#suburbPerformance").hide();
         $("#clMap").hide();
+        $("#list").hide();
+
 
         $("#mansfield").click(function(e) {
           e.preventDefault();
           $("#clMap").toggle();
+          $("#list").toggle();
         });
 
         var total = 0;
