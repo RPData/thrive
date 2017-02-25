@@ -7,6 +7,15 @@ body {
  width: 100%;
 }
 
+.net-pos {
+  background-color: #be0d00;
+}
+.net-pos-text {
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 4em;
+}
 .media-heading {
   color: #be0d00;
 }

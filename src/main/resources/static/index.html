@@ -13,32 +13,6 @@
   <!-- font -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
 
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Cost', '% of income'],
-          ['Housing',     11],
-          ['Food',      2],
-          ['Commuting',  2],
-          ['Other', 2],
-          ['Bills',    7]
-        ]);
-
-        var options = {
-          title: 'Transaction Breakdown',
-          is3D: true
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-  </script>
 </head>
 <body>
   <nav class="thrive-navbar navbar navbar-default">
@@ -47,6 +21,9 @@
         <a class="navbar-brand" href="#">
           <img alt="Brand" src="img/logo.png" class="img-responsive">
         </a>
+        <!-- <a class="navbar-brand" href="#">
+          THR!VE
+        </a> -->
       </div>
     </div>
   </nav>
@@ -196,7 +173,7 @@
           </tbody>
           <thead>
             <th>
-              <span class="glyphicon glyphicon-blackboard"></span> Share Portfolio
+              <span class="glyphicon glyphicon-blackboard"></span> Shares/Managed Funds
             </th>
             <th>
             </th>
@@ -231,7 +208,6 @@
           </thead>
           <tbody>
             <tr><td>Credit balance</td><td id="creditBalance"></td></tr>
-            <tr><td>Net Position</td><td id="netPosition"></td></tr>
           </tbody>
           <thead>
             <th>
@@ -242,12 +218,22 @@
           </thead>
           <tbody>
             <tr><td>Money Tracker</td><td></td></tr>
-            <tr><td><img src="img/MoneyTracker.png" /></td><td></td></tr>
+            <tr><td><img class="img-responsive" src="img/MoneyTrackerChart2.PNG" /></td>
+            <td><img class="img-responsive" src="img/Total Portfolio Chart.PNG"/></td></tr>
           </tbody>
         </table>
       </div>
     </div>
 
+    <div class="panel panel-default net-pos">
+      <div class="panel-body">
+        <table class="table table-default">
+          <tbody>
+            <tr class="net-pos-text"><td class="text-center">Net Position</td><td id="netPosition"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -305,7 +291,6 @@
               </tbody>
 
             </table>
-            <!-- <div id="map"></div> -->
             <div id="clMap" class="text-center">
               <img src="img/MansfieldMAP.PNG" alt="mansfield"/>
             </div>
@@ -321,7 +306,8 @@
           </div>
           <div class="media-body">
             <h4 class="media-heading">13 Paul St Mansfield QLD 4122</h4>
-            <p>$245,000</p>
+            <p>Price: $245,000</p>
+            <p>Rental Yield: 5.05%</p>
             <p><span class="glyphicon glyphicon-file"></span></p>
           </div>
         </li>
@@ -333,7 +319,8 @@
           </div>
           <div class="media-body">
             <h4 class="media-heading">5/2 Raintree St Mansfield QLD 4122</h4>
-            <p>$500,000</p>
+            <p>Price: $500,000</p>
+            <p>Rental Yield: 4.05%</p>
             <p><span class="glyphicon glyphicon-file"></span></p>
           </div>
         </li>
@@ -345,7 +332,7 @@
 
 
     <div class="pull-right" role="group" aria-label="..." style="padding: 0 0 20px 0;">
-      <button type="button" class="btn btn-danger">Apply For Conditional Approval</button>
+      <button id="apply-btn" type="button" class="btn btn-danger">Apply For Conditional Approval</button>
       <div class="btn-group" role="group">
         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Share With
@@ -380,6 +367,23 @@
         <p>Powered by <img src="img/corelogic-logo-footer.png"></img></p>
       </div>
   </footer>
+
+  <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Congratulations!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your pre-approval is now granted. One of our agents will get in contact with you shortly.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -430,23 +434,11 @@
             e.preventDefault();
             $("#suburbPerformance").toggle();
         });
+
+        $("#apply-btn").click(function() {
+          $("#modal").modal("show");
+        });
     });
-  </script>
-  <script>
-    function initMap() {
-      var mansfieldPoint = {lat: -33.768499, lng: 151.101704};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: mansfieldPoint
-      });
-      var marker = new google.maps.Marker({
-        position: mansfieldPoint,
-        map: map
-      });
-    }
-  </script>
-  <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc6VmVOfwbnVjqDPRrwzGZUq6yW48-IOk&callback=initMap">
   </script>
 
 </body>
