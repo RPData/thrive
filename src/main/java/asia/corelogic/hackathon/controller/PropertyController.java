@@ -1,6 +1,8 @@
 package asia.corelogic.hackathon.controller;
 
 import asia.corelogic.hackathon.gateway.AvmGateway;
+import asia.corelogic.hackathon.gateway.ComparableSalesGateway;
+import asia.corelogic.hackathon.gateway.ComparableSalesResponse;
 import asia.corelogic.hackathon.gateway.PropertySuggestion;
 import asia.corelogic.hackathon.gateway.PropertySuggestionGateway;
 import asia.corelogic.hackathon.gateway.RentalAvmGateway;
@@ -17,12 +19,14 @@ public class PropertyController {
     private PropertySuggestionGateway suggestionGateway;
     private AvmGateway avmGateway;
     private RentalAvmGateway avmRental;
+    private ComparableSalesGateway otmGateway;
 
     @Autowired
-    public PropertyController(PropertySuggestionGateway suggestionGateway, AvmGateway avmGateway, RentalAvmGateway rentalAvmGateway) {
+    public PropertyController(PropertySuggestionGateway suggestionGateway, AvmGateway avmGateway, RentalAvmGateway rentalAvmGateway, ComparableSalesGateway otmGateway) {
         this.suggestionGateway = suggestionGateway;
         this.avmGateway = avmGateway;
         this.avmRental = rentalAvmGateway;
+        this.otmGateway = otmGateway;
     }
 
     @GetMapping(path = "/suggestAddress")
@@ -37,5 +41,10 @@ public class PropertyController {
     @GetMapping(path = "/avmRental")
     public RentalAvmGateway.AvmResult avmRental(@RequestParam int q) {
         return avmRental.getAvm(q);
+    }
+
+    @GetMapping(path = "/otm")
+    public ComparableSalesResponse otm() {
+        return otmGateway.findComparableSales();
     }
 }
