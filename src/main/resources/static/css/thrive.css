@@ -7,6 +7,12 @@ body {
  width: 100%;
 }
 
+.thrive-brand {
+  color: #FFF;
+  font-family: 'Francois One', sans-serif;
+  font-size: 4em;
+}
+
 .net-pos {
   background-color: #be0d00;
 }
