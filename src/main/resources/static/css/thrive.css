@@ -7,6 +7,10 @@ body {
  width: 100%;
 }
 
+.media-heading {
+  color: #be0d00;
+}
+
 .btn-danger {
   background-color: #be0d00;
   border-color: #be0d00;
