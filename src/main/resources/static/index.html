@@ -242,10 +242,10 @@
       <div class="panel-body" id="collapse3" class="panel-body collapse in">
           <div class="list-group">
             <a id="investLink" href="" class="list-group-item">Could I add an investment property to my portfolio?</a>
-            <a href="" class="list-group-item">Could I upgrade my home?</a>
-            <a href="" class="list-group-item">Could I renovate my home?</a>
-            <a href="" class="list-group-item">Can I travel abroad for a year?</a>
-            <a href="" class="list-group-item">Can I start my own business?</a>
+            <a href="" class="list-group-item hideme">Could I upgrade my home?</a>
+            <a href="" class="list-group-item hideme">Could I renovate my home?</a>
+            <a href="" class="list-group-item hideme">Can I travel abroad for a year?</a>
+            <a href="" class="list-group-item hideme">Can I start my own business?</a>
           </div>
 
           <div id="suburbPerformance">
@@ -301,29 +301,45 @@
         <li class="media">
           <div class="media-left">
             <a href="#">
-              <img class="media-object" src="img/house.png" alt="...">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">13 Paul St Mansfield QLD 4122</h4>
-            <p>Price: $245,000</p>
-            <p>Rental Yield: 5.05%</p>
-            <p><span class="glyphicon glyphicon-file"></span></p>
-          </div>
-        </li>
-        <li class="media">
-          <div class="media-left">
-            <a href="#">
               <img class="media-object" src="img/PropertyPhoto1.JPG" height="70px" width="120px" alt="...">
             </a>
           </div>
           <div class="media-body">
             <h4 class="media-heading">5/2 Raintree St Mansfield QLD 4122</h4>
-            <p>Price: $500,000</p>
+            <p>Price: Offers over $289,000</p>
             <p>Rental Yield: 4.05%</p>
-            <p><span class="glyphicon glyphicon-file"></span></p>
+            <p><a href="PPR1.pdf"><span class="glyphicon glyphicon-file"></span></a></p>
           </div>
         </li>
+
+        <li class="media">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" src="https://static.rpdata.com/rpdaAU/photo/listsale/768x512/17/02/14/28201386/28201386_1.JPG" height="70px" width="120px" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">12 Mailey St Mansfield QLD 4122</h4>
+            <p>Price: $450,000</p>
+            <p>Rental Yield: 5.05%</p>
+            <p><a href="PPR2.pdf"><span class="glyphicon glyphicon-file"></span></a></p>
+          </div>
+        </li>
+
+        <li class="media">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" height="70px" width="120px" src="https://static.rpdata.com/rpdaAU/photo/listsale/768x512/16/09/20/27591886/27591886_1.JPG" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">16 Brownleaf St Mansfield QLD 4122</h4>
+            <p>Price: Offers over $599,000</p>
+            <p>Rental Yield: 7.55%</p>
+            <p><a href="PPR3.pdf"><span class="glyphicon glyphicon-file"></span></a></p>
+          </div>
+        </li>
+
       </ul>
 
     </div>
@@ -376,7 +392,7 @@
         <h4 class="modal-title">Congratulations!</h4>
       </div>
       <div class="modal-body">
-        <p>Your pre-approval is now granted. One of our agents will get in contact with you shortly.</p>
+        <p>Your pre-approval is now granted. Easy.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -393,7 +409,6 @@
         $("#suburbPerformance").hide();
         $("#clMap").hide();
         $("#list").hide();
-
 
         $("#mansfield").click(function(e) {
           e.preventDefault();
@@ -433,6 +448,7 @@
         $("#investLink").click(function(e) {
             e.preventDefault();
             $("#suburbPerformance").toggle();
+            $(".hideme").toggle();
         });
 
         $("#apply-btn").click(function() {
