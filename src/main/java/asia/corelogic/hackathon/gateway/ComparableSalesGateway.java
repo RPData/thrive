@@ -12,8 +12,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,22 +49,8 @@ public class ComparableSalesGateway {
     private ComparableSale createComparableSaleFrom(PropertySummary propertySummary) {
         ComparableSale comparableSale = new ComparableSale(propertySummary.id);
         comparableSale.setSingleLineAddress(propertySummary.address.singleLineAddress);
-//        propertySummary.lastSaleDetail.ifPresent(lastSaleDetail -> {
-//            comparableSale.setSalePrice(lastSaleDetail.price);
-//            comparableSale.setIsAgentsAdvice(lastSaleDetail.isAgentsAdvice);
-//            lastSaleDetail.contractDate.ifPresent(
-//                contractDate -> comparableSale.setSaleDate(LocalDate.parse(contractDate, DateTimeFormatter.ISO_DATE)));
-//        });
-//        propertySummary.attributes.ifPresent(attributes -> {
-//            comparableSale.setLandArea(attributes.landArea);
-//            comparableSale.setBedrooms(attributes.bedrooms);
-//            comparableSale.setBathrooms(attributes.bathrooms);
-//            comparableSale.setCarSpaces(attributes.carSpaces);
-//        });
-//        propertySummary.radiusSummary.ifPresent(radiusSummary -> {
-//            radiusSummary.distanceFromPoint.ifPresent(distance -> comparableSale.setDistance(Double.valueOf(distance)));
-//        });
         comparableSale.setPropertyPhotoUri(propertySummary.propertyPhoto.mediumPhotoUrl);
+        comparableSale.setPriceDescription(propertySummary.otmForSaleDetail.priceDescription);
         return comparableSale;
     }
 
@@ -79,9 +63,7 @@ public class ComparableSalesGateway {
     private static class PropertySummary {
         private Long id;
         private Address address;
-        //        private Optional<Attributes> attributes = Optional.empty();
-//        private Optional<LastSaleDetail> lastSaleDetail = Optional.empty();
-//        private Optional<RadiusSummary> radiusSummary = Optional.empty();
+        private OtmForSaleDetail otmForSaleDetail;
         private PropertyPhoto propertyPhoto;
     }
 
@@ -93,26 +75,9 @@ public class ComparableSalesGateway {
 
     @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
     @JsonIgnoreProperties(ignoreUnknown = true)
-    private static class Attributes {
-        private Integer bathrooms;
-        private Integer bedrooms;
-        private Integer carSpaces;
-        private Integer lockUpGarages;
-        private Integer landArea;
-    }
+    private static class OtmForSaleDetail {
+        private String priceDescription;
 
-    @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    private static class LastSaleDetail {
-        private Optional<String> contractDate = Optional.empty();
-        private Integer price;
-        private boolean isAgentsAdvice;
-    }
-
-    @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    private static class RadiusSummary {
-        private Optional<String> distanceFromPoint = Optional.empty();
     }
 
     @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
