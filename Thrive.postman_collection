@@ -1,0 +1,163 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Thrive",
+		"_postman_id": "02855372-37d4-0d9f-882c-2039d1289722",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "suggest ",
+			"request": {
+				"url": "http://localhost:8080/suggestAddress?q=60 St helens",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "AVM",
+			"request": {
+				"url": "http://localhost:8080/avm?q=6396430",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "AVM property",
+			"request": {
+				"url": "https://property-api.corelogic.asia/bsg-au/v1/property/avm.json",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzY29wZSI6WyJDUlQiLCJNQVAiLCJQVFkiLCJTR1QiLCJTVFMiLCJUVEwiXSwiaXNzIjoiaHR0cHM6Ly9hY2Nlc3MtYXBpLmNvcmVsb2dpYy5hc2lhIiwiZW52X2FjY2Vzc19yZXN0cmljdCI6ZmFsc2UsImV4cCI6MTQ4ODAxODMyNCwiY2xpZW50X2lkIjoiNTUzOTQwNDIifQ.K9TbTf2-yGfBbCxFdFnj1cfikUc814jKhvFPULS8oWHu-FAPZ_5hKScL2SOHFEmDvJDUhXNkF2GnmktrPU5_x7BslqSVp0P6HoD0_6iDPSHKTvy1tWi4UxpBo00dSQvAlwdOMnLu03Vhce8t3TucQwSnkj6XZK-VcAyYB9sQ52w",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"propertyId\": 6396430\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "AVM property rental",
+			"request": {
+				"url": "https://property-api.corelogic.asia/bsg-au/v1/property/6396430/rentalAvm.json",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzY29wZSI6WyJDUlQiLCJNQVAiLCJQVFkiLCJTR1QiLCJTVFMiLCJUVEwiXSwiaXNzIjoiaHR0cHM6Ly9hY2Nlc3MtYXBpLmNvcmVsb2dpYy5hc2lhIiwiZW52X2FjY2Vzc19yZXN0cmljdCI6ZmFsc2UsImV4cCI6MTQ4ODAxODMyNCwiY2xpZW50X2lkIjoiNTUzOTQwNDIifQ.K9TbTf2-yGfBbCxFdFnj1cfikUc814jKhvFPULS8oWHu-FAPZ_5hKScL2SOHFEmDvJDUhXNkF2GnmktrPU5_x7BslqSVp0P6HoD0_6iDPSHKTvy1tWi4UxpBo00dSQvAlwdOMnLu03Vhce8t3TucQwSnkj6XZK-VcAyYB9sQ52w",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"propertyId\": 6396430}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "AVM Rental",
+			"request": {
+				"url": "http://localhost:8080/avmRental?q=6396430",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "nabLogin",
+			"request": {
+				"url": "http://localhost:8080/nabLogin",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "nabAccounts",
+			"request": {
+				"url": "http://localhost:8080/nabAccounts",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "nabCustomer",
+			"request": {
+				"url": "http://localhost:8080/nabCustomer",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "comparable",
+			"request": {
+				"url": "https://property-api.corelogic.asia/search/au/property/locality/29475/otmForSale?pTypes=HOUSE,UNIT&beds=1-4&baths=0-3&carSpaces=1-3&price=150000-950000&sort=price,asc",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzY29wZSI6WyJDUlQiLCJNQVAiLCJQVFkiLCJTR1QiLCJTVFMiLCJUVEwiXSwiaXNzIjoiaHR0cHM6Ly9hY2Nlc3MtYXBpLmNvcmVsb2dpYy5hc2lhIiwiZW52X2FjY2Vzc19yZXN0cmljdCI6ZmFsc2UsImV4cCI6MTQ4ODAxODMyNCwiY2xpZW50X2lkIjoiNTUzOTQwNDIifQ.K9TbTf2-yGfBbCxFdFnj1cfikUc814jKhvFPULS8oWHu-FAPZ_5hKScL2SOHFEmDvJDUhXNkF2GnmktrPU5_x7BslqSVp0P6HoD0_6iDPSHKTvy1tWi4UxpBo00dSQvAlwdOMnLu03Vhce8t3TucQwSnkj6XZK-VcAyYB9sQ52w",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"propertyId\": 6396430\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "OtmComparable",
+			"request": {
+				"url": "http://localhost:8080/otm",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
